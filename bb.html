@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title> BOUNCING BALLS </title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .container {
+        color: #fff;
+        position: absolute;
+        font-weight: bold;
+        margin-top: 65px;
+        left:1225px;
+    }
+
+</style>
+</head>
+
+<body>
+<div class="container">Ball count: <span id="counter"></span></div>
+<canvas id="black-board"></canvas>
+
+<script>
+ 
+    var blackBoard = document.querySelector('#black-board');
+
+    var counter = document.querySelector('#counter');
+
+    var blackBoardContext = blackBoard.getContext('2d');
+
+    var blackBoardWidth = blackBoard.width = window.innerWidth;
+    var blackBoardHeight = blackBoard.height = window.innerHeight;
+
+    blackBoardContext.fillStyle = 'rgba(0,0,0, .25)';
+    blackBoardContext.fillRect(0, 0, blackBoardWidth, blackBoardHeight);
+
+    function random(min, max) {
+        var num = Math.floor( Math.random() * (max - min + 1 ) ) + min;
+        return num;
+    }
+    function Shape(coordX, coordY, horizontalVelocity, verticalVelocity, size) {
+       
+        this.coordX = coordX;
+        this.coordY = coordY;
+
+        this.horizontalVelocity = horizontalVelocity;
+        this.verticalVelocity = verticalVelocity;
+
+        this.size = size;
+    }
+
+   
+    function Ball(coordX, coordY, horizontalVelocity, verticalVelocity, size, ballColor) {
+        
+        Shape.call(this, coordX, coordY, horizontalVelocity, verticalVelocity, size);
+
+        this.ballColor = ballColor;
+
+        
+        this.exists = true;
+    }
+
+    Ball.prototype.drawBall = function () {
+       
+        blackBoardContext.beginPath();
+
+        blackBoardContext.fillStyle = this.ballColor;
+
+        blackBoardContext.arc(this.coordX, this.coordY, this.size, 0, 2 * Math.PI);
+
+        blackBoardContext.fill();
+    }
+
+    
+
+    Ball.prototype.update = function () {
+        if ((this.coordX + this.size) >= blackBoardWidth) {
+            this.horizontalVelocity = - (this.horizontalVelocity);
+        }
+
+        if ((this.coordX + this.size) <= 0) {
+            this.horizontalVelocity = - (this.horizontalVelocity);
+        }
+
+        if ((this.coordY + this.size) >= blackBoardHeight) {
+            this.verticalVelocity = - (this.verticalVelocity);
+        }
+
+        if ((this.coordY + this.size) <= 0) {
+            this.verticalVelocity = - (this.verticalVelocity);
+        }
+        this.coordX += this.horizontalVelocity;
+        this.coordY += this.verticalVelocity;
+    }
+
+    
+    var balls = [];
+
+  
+    Ball.prototype.ballCollisionDetect = function () {
+        for (var i = 0; i < balls.length; i++) {
+
+            if (!(this === balls[i])) {
+
+                distanceX = this.coordX - balls[i].coordX;
+                distanceY = this.coordY - balls[i].coordY;
+                ballsDistance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+                if ((ballsDistance - this.size) <= balls[i].size) {
+                    if (this.ballColor !== balls[i].ballColor) {
+                        this.ballColor = balls[i].ballColor;
+                    } else {
+                        this.ballColor = 'rgb('+random(0, 255)+', '+random(0, 255)+', '+random(0, 255)+')';
+                    }
+                }
+            }
+        }
+    }
+
+
+    
+    function EvilCircle(coordX, coordY, horizontalVelocity, verticalVelocity, size, evilStrokeColor) {
+        Shape.call(this, coordX, coordY, horizontalVelocity, verticalVelocity, size);
+
+        this.evilStrokeColor = evilStrokeColor;
+    }
+
+    EvilCircle.prototype.drawEvil = function() {
+        blackBoardContext.beginPath();
+        blackBoardContext.lineWidth = 2;
+        blackBoardContext.strokeStyle = "#fff";
+        blackBoardContext.arc(this.coordX, this.coordY, this.size, 0, 2*Math.PI );
+        blackBoardContext.stroke();
+    }
+
+    EvilCircle.prototype.checkBounds = function() {
+        if( (this.coordX + this.size) >= blackBoardWidth ) {
+            this.coordX = blackBoardWidth + 2*this.horizontalVelocity;
+        }
+
+        if( (this.coordX + this.size ) <= 0 ) {
+            this.coordX = -2*this.horizontalVelocity;
+        }
+
+        if( (this.coordY + this.size ) >= blackBoardHeight ) {
+            this.coordY = blackBoardHeight - 2*this.verticalVelocity;
+        }
+
+        if( (this.coordY + this.size)  <= 0) {
+            this.coordY = 2*this.verticalVelocity;
+        }
+    }
+
+    EvilCircle.prototype.setControls = function() {
+        console.log("I'am in");
+
+        var myEvilCircle = this;
+       
+        window.onkeydown = function(event) {
+
+            event.preventDefault();
+         
+            if(event.keyCode === 37 ) {
+                myEvilCircle.checkBounds();
+                myEvilCircle.coordX += myEvilCircle.horizontalVelocity;
+            }
+
+            if(event.keyCode === 39 ) {
+                myEvilCircle.checkBounds();
+                myEvilCircle.coordX -= myEvilCircle.horizontalVelocity;
+            }
+
+            if(event.keyCode === 38 ) {
+                myEvilCircle.checkBounds();
+                myEvilCircle.coordY -= myEvilCircle.verticalVelocity;
+            }
+
+            if(event.keyCode === 40 ) {
+                myEvilCircle.checkBounds();
+                myEvilCircle.coordY += myEvilCircle.verticalVelocity;
+            }
+        }
+    }
+
+
+    EvilCircle.prototype.evilDetectCollision = function() {
+        for( var k = 0 ; k < balls.length ; k++ ) {
+            if( balls[k].exists ) {
+                let distanceEvilBallX = this.coordX - balls[k].coordX;
+                let distanceEvilBallY = this.coordY - balls[k].coordY; 
+                let distanceEvilBall = Math.sqrt(distanceEvilBallX*distanceEvilBallX + distanceEvilBallY*distanceEvilBallY);
+
+                if((distanceEvilBall - this.size) <= balls[k].size ) {
+                    balls[k].exists = false;
+                    defaultNumber--;
+                }
+            }
+        }
+    }
+
+    var evilCircle = new EvilCircle(250, 250, -20, 20, 10, '#fff');
+    evilCircle.setControls();
+
+    var defaultNumber = 25;
+
+    function bouncingBallsLoop() {
+        blackBoardContext.fillStyle = 'rgba(0,0,0, .25)';
+        blackBoardContext.fillRect(0, 0, blackBoardWidth, blackBoardHeight);
+        while( balls.length <= defaultNumber - 1 ) {
+           
+            var ball = new Ball(
+                random(0, blackBoardWidth),
+                random(0, blackBoardHeight),
+                random(-7, 7),
+                random(-7, 7),
+                random(5, 20),
+                'rgb('+random(0, 255)+', '+random(0, 255)+', '+random(0, 255)+')'
+            );
+            balls.push(ball);
+        }
+
+        for( var j = 0 ; j < balls.length ; j++ ) {
+            evilCircle.drawEvil();
+            evilCircle.evilDetectCollision();
+
+            if(balls[j].exists) {
+                balls[j].drawBall();
+                balls[j].update();
+                balls[j].ballCollisionDetect();
+            }
+        }
+
+        
+        counter.textContent = defaultNumber;
+     
+        requestAnimationFrame(bouncingBallsLoop);
+    }
+    bouncingBallsLoop();
+    
+</script>
+</body>
+
+</html>
