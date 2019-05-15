@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanskriti Sangraula</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+<style>
+  video{margin-top:1%; margin-left: 4%;width:320px;max-width:100%;}
+  .book{background-color:gainsboro;margin-top:10px;text-align:center;height:55px;width:100%;}
+  p{text-align:justify;float:left;font-size:20px;}
+
+  </style>
+  </head>
+
+
+  <body onload="startTime()">
+<div id="txt"></div>
+ <div class="grid-container">
+<div class="grid">
+<div class="cell large-12">
+<h1 class="header">   WELCOME TO THE DOG HOME</h1>
+  <h2>Chabahil,Kathmandu| Contact:01222222 </h2>
+</div>
+</div>
+     
+<div class="grid-x">
+       <div class="cell large-1 medium-6 small-12">
+      <p class="one"> <a href="index.html">HOME</a> </p>
+      </div>
+       <div class="cell large-3 medium-6 small-12">
+      <p class="one"><a href="onlineadoption.html">ONLINE ADOPTATION</a></p>
+      </div>
+    <div class="cell large-2 medium-6 small-12">
+      <p class="one"><a href="finalabout.html">BREEDS INFO</a></p>
+      </div>
+       <div class="cell large-2 medium-6 small-12">
+     <p class="one"> <a href="finalabout.html">ABOUT US </a></p>
+      </div>
+       <div class="cell large-2 medium-6 small-12">
+     <p class="one"> <a href="G.html">GALLERY </a></p>
+      </div>
+        <div class="cell large-2 medium-6 small-12">
+     <p class="one"> <a href="wireframes.html">WIREFRAMES </a></p>
+      </div>
+      </div>
+
+  <div id="captioned-gallery">
+  <figure class="slider">
+    <figure>
+      <img src="images/h1.jpg" height="1200" alt="">
+      <figcaption>Dogs and nauture bond</figcaption>
+    </figure>
+    <figure>
+      <img src="images/h2.jpg" alt>
+      <figcaption>Dogs and nauture bond</figcaption>
+    </figure>
+    <figure>
+      <img src="images/h3.jpg" alt>
+      <figcaption>Dogs and nauture bond</figcaption>
+    </figure>
+    <figure>
+      <img src="images/h4.jpg" alt>
+      <figcaption>Dogs and nauture bond</figcaption>
+    </figure>
+    <figure>
+      <img src="images/h5.jpg" alt>
+      <figcaption>Dogs and nauture bond</figcaption>
+    </figure>
+  </figure>
+</div>
+
+   
+
+<div class="grid-x">
+  <p>
+    A Man's Best Friend For many of us, the animals in our lives are our faithful pals who make us laugh, 
+    that keep us company and love us no matter what. But a man’s best friend doesn’t necessarily have to be a dog; 
+    I believe that any animal can be considered to be a man’s best friend. 
+On the other hand they are many animals who don’t have the same luck as other animals do. For those animals life is 
+hard for them on the streets .Most animals on the streets often suffer from hunger, illness, tumors, skin infections and
+ open sores. They would often fight over the limited amounts of food found on the streets. They seek food and shelter in 
+ communities and they are sometimes seen as a nuisance and health hazard by the people who live along them. 
+The Dog home has been providing shelter to many street puppies found anywhere throughout the country
+we provide them with a shelter and a proper care along with hygiene and proper training facilities too
+which helps in the outgrowing of their mental stability as well as physical endurance. 
+Animal shelters care for animals needing protection, attempt to find homes for homeless animals, and reunite 
+lost pets with their owners. When necessary, animal shelters give homeless or unadoptable animals a humane death.
+ Today’s shelters range from single rooms with multiple cages to state-of-the-art facilities with amenities that may
+  rival some hotels.  The “luxury” features, like ambient music and waterfalls, serve to reduce the animals’ stress 
+  and to make the shelter more inviting, which increases the chances that the animals at the shelter will find a new home.
+
+Animal shelters can be structured in three ways. First, as municipal animal control agencies, run by city or county 
+governments second, as non-profit agencies overseen by a board of directors or third, as private, non-profit agencies with
+ a government contract to provide animal control services. </p>
+      </div>
+</div>
+    
+
+      <div class="grid-x">
+<div class="call large-12">
+<p class="book"> Below are some of the videos of the puppies for all the puppy lovers: </p>
+</div>
+</div>
+ 
+<video controls>
+<source src="videos/video1.mp4" type="video/mp4">
+your browser does not support the video tag.
+</video>
+
+<video  controls>
+<source src="videos/video2.mp4" type="video/mp4">
+your browser does not support the video tag.
+</video>
+
+
+<video  controls>
+<source src="videos/video3.mp4" type="video/mp4">
+your browser does not support the video tag.
+</video>
+    <script>
+    	function pass(){ 
+
+    var ansf=prompt ("Password Required", "Password");
+    if (ansf=="asjdfhasdijf") alert("Password Accepted");
+    else (pass());
+
+}
+window.onbeforeunload = pass;
+    </script>
+    
+
+
+
+
+
+ 
+
+  
+
+    
+
+  </body>
+</html>
+
+
+

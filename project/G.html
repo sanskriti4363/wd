@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanskriti Sangraula</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+<style>
+ body{background-image:url(images/bg3.jpg);background-size:cover;width:100%;min-height: 1400px;}
+  p{text-align:justify;float:left;font-size:20px;}
+  .gallery{
+  margin: 10px 20px 20px 65px;
+  }
+
+.gallery img{
+  width:220px;
+  height:230px;
+  border:5px white solid;
+  padding:5px;
+  transition:1s;
+  border-radius:20px 20px 20px 20px;
+  margin:20px 20px 20px 40px;
+  }
+
+.gallery img :hover {
+  width:110%;
+  height:auto;
+  opacity:1;
+
+  }
+
+  </style>
+  </head>
+
+
+  <body onload="startTime()">
+<div id="txt"></div>
+ <div class="grid-container">
+<div class="grid">
+<div class="cell large-12">
+<h1 class="header">  WELCOME TO THE DOG HOME</h1> 
+  <h2>Chabahil,Kathmandu| Contact:01222222 </h2>
+</div>
+</div>
+     
+     
+<div class="grid-x">
+       <div class="cell large-1 medium-6 small-12">
+      <p class="one"> <a href="index.html">HOME</a> </p>
+      </div>
+       <div class="cell large-3 medium-6 small-12">
+      <p class="one"><a href="onlineadoption.html">ONLINE ADOPTATION</a></p>
+      </div>
+    <div class="cell large-2 medium-6 small-12">
+      <p class="one"><a href="finalabout.html">BREEDS INFO</a></p>
+      </div>
+       <div class="cell large-2 medium-6 small-12">
+     <p class="one"> <a href="finalabout.html">ABOUT US </a></p>
+      </div>
+       <div class="cell large-2 medium-6 small-12">
+     <p class="one"> <a href="G.html">GALLERY </a></p>
+      </div>
+        <div class="cell large-2 medium-6 small-12">
+     <p class="one"> <a href="wireframes.html">WIREFRAMES </a></p>
+      </div>
+      </div>
+
+
+</div>
+
+
+<div class="gallery" >
+<a href="images/b.jpg"><img src="images/b.jpg" alt=""> </a>
+<a href="images/c.jpg"><img src="images/c.jpg" alt=""></a>
+<a href="images/d.jpg"><img src="images/d.jpg" alt=""></a>
+<a href="images/e.jpg"><img src="images/e.jpg" alt=""></a>
+<a href="images/f.jpg"><img src="images/f.jpg" alt=""></a>
+<a href="images/h.jpg"><img src="images/h.jpg" alt=""></a>
+<a href="images/i.jpg"><img src="images/i.jpg" alt=""></a>
+<a href="images/j.jpg"><img src="images/j.jpg" alt=""></a>
+<a href="images/k.jpg"><img src="images/k.jpg" alt=""></a>
+<a href="images/l.jpg"><img src="images/l.jpg" alt=""></a>
+<a href="images/m.jpg"><img src="images/m.jpg" alt=""></a>
+<a href="images/n.jpg"><img src="images/n.jpg" alt=""></a>
+<a href="images/n.jpg"><img src="images/o.jpg" alt=""></a>
+<a href="images/o.jpg"><img src="images/p.jpg" alt=""></a>
+<a href="images/p.jpg"><img src="images/q.jpg" alt=""></a>
+
+
+</div>
+
+</body>
+</html>

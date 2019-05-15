@@ -1,0 +1,231 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+    <style>
+        h1{font-size:30px;text-align: center;}
+        h2{text-align:center;font-size:15px;}
+body{background-image:url(images/bg3.jpg);max-height:6000px;background-size:cover;}
+ header{width:100%;height:auto;margin-bottom:5px;font-size:25px;font-weight: bold;color:black;text-align: center;}
+.start{width:70%; height:110px; border-radius:50%; border:solid 3px black;background:aliceblue;}
+.name{width:100%; height:auto;  color:#fff;vertical-align:middle;background:aliceblue;color:black;}
+.one{width:100%;background-color:gainsboro;text-align:center;border-radius:2px;font-weight:bold;color:black;height:50px;line-height:50px;}
+.two{font-weight:bold;background-color:gainsboro;text-align:center;color:black;width:100%;}
+.cards{margin-top:40px;background-color:rgba(0, 0, 0, 0.1);border-radius:20px 20px;margin-left:5%;height:80px;}
+.cards:hover{filter:grayscale(0);
+    transform:scale(1.1);}
+.cards h3{background-color:gainsboro;color:black;font-size:19px;font-weight:bold;margin:0;padding:10px 30px;border-radius:10px 10px 0 0;color:#040c38;}
+
+.cards img{width:100%;height:100%;overflow:hidden;margin:0;float:left;}
+.cards p{background:#408000;color:black;margin:0;padding:20px;}
+.readmore{width:100%;background-color:gainsboro;float:left;margin:0;padding:0;}
+.readmore a{margin-left:40px;color:black;}
+.readmore :hover{background:#408000;}
+.footer1{display:block;width:100%;background:whitesmoke;margin-top:8px;}
+.footer1 img{display:inline-block; width:70px; height:60px; border-radius:50%; border:solid 3px black;}
+   a:hover{background:whitesmoke;}  
+</style>
+  </head>
+  <body onload="startTime()">
+<div id="txt"></div>
+   <div class="grid-container">
+<div class="grid">
+<div class="cell large-12">
+<h1 class="header"> WELCOME TO THE DOG HOME</h1> 
+  <h2>Chabahil,Kathmandu| Contact:01222222 </h2>
+</div>
+</div>
+<div class="grid-x">
+       <div class="cell large-1 medium-6 small-12">
+      <p class="one"> <a href="index.html">HOME</a> </p>
+      </div>
+       <div class="cell large-3 medium-6 small-12">
+      <p class="one"><a href="onlineadoption.html">ONLINE ADOPTATION</a></p>
+      </div>
+    <div class="cell large-2 medium-6 small-12">
+      <p class="one"><a href="finalabout.html">BREEDS INFO</a></p>
+      </div>
+       <div class="cell large-2 medium-6 small-12">
+     <p class="one"> <a href="list.html">ABOUT US </a></p>
+      </div>
+       <div class="cell large-2 medium-6 small-12">
+     <p class="one"> <a href="G.html">GALLERY </a></p>
+      </div>
+        <div class="cell large-2 medium-6 small-12">
+     <p class="one"> <a href="wireframes.html">WIREFRAMES </a></p>
+      </div>
+      </div>
+
+
+ <div class="grid-x">
+       <div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3> POMERANIAN </h3>
+<img src="images/pomeranian.jpg" alt="#"/>
+<p> The pomeranian is the breed of the dog of the spitz type that is named for the pomerania region in north-west poland and north-east germanyin central europe.The tiny is are much compact and affectionate. </p>
+
+<div class="readmore">
+<a href="https://en.wikipedia.org/wiki/Pomeranian_(dog)"> More about the breed </a>
+</div>
+</div>
+      </div>
+ <div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3> LABRADORS</h3>
+<img src="images/labrador.jpg" alt="#"/>
+<p> The Labrador Retriever or just labrador is a type of retriever-gun dog. The Labrador is one of the most popular breeds in all across the globe. They are friendly,outgoing and high spirited breed.
+</p>
+<div class="readmore">
+<a href="https://en.wikipedia.org/wiki/Labrador_Retriever/">  More about the breed </a>
+</div>
+</div>
+      </div>
+ <div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3>JAPANESE SPITZ </h3>
+<img src="images/spitz.jpg" alt="#"/>
+<p> The japanese spitz is a small to medium breed of dog of the spitz type.The japanes spitz is a companion dog and pet.It is a loyal,energetic and affectionate companion that is highly intelligent and good with children. </p>
+
+<div class="readmore">
+<a href="https://en.wikipedia.org/wiki/Japanese_Spitz">  More about the breed </a>
+</div>
+</div>
+</div>
+ <div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3> G.SHEPHERD</h3>
+<img src="images/shepherd.jpg" alt="#"/>
+<p> The German Shepherd is a breed of a medium to large sized working dog that originated in germany.They are protective and are suited to many types of homes because tey are so intelligent and adaptable.</p>
+
+<div class="readmore">
+<a href="https://en.wikipedia.org/wiki/German_Shepherd/"> More about the breed </a>
+</div>
+</div>
+      </div>
+
+<div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3>AKITA</h3>
+<img src="images/akita.jpg" alt="#"/>
+<p> The Akita is a large breed of dog originating from the mountainous regions of japan as a large and powerful dog with a noble and intimidating presence originally used for guarding royality and nobility. </p>
+
+<div class="readmore">
+<a href="https://en.wikipedia.org/wiki/Akita_(dog)/">  More about the breed</a>
+</div>
+</div>
+      </div>
+
+<div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3>ST.BERNARD</h3>
+<img src="images/bernard.jpg" alt="#"/>
+<p> The st.bernard is a breed of very large working dog from the western alps. Originally the st.bernard dog breed was used to guard the ground's of switzerland's hospise st.bernard which later made it famous. </p>
+
+
+<div class="readmore">
+<a href="https://en.wikipedia.org/wiki/St._Bernard_(dog)/">  More about the breed</a>
+</div>
+</div>
+      </div>
+
+  <div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3>BULLDOG</h3>
+<img src="images/bulldog.jpg" alt="#"/>
+<p>The Bulldog, also known as the British Bulldog or English Bulldog, is a medium-sized breed of dog. It is a muscular, hefty dog with a wrinkled face and a distinctive pushed-in nose which makes them distinct.</p>
+
+
+<div class="readmore">
+<a href="https://en.wikipedia.org/wiki/Bulldog/">  More about the breed </a>
+</div>
+</div>
+      </div>    
+
+
+  <div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3>DOODLE</h3>
+<img src="images/doodle.jpg" alt="#"/>
+<p>A Doodle is a cross between a Poodle and another dog breed. (There are also Oodles and Poos, such as Schnoodles, Yorkiepoos, and Cockapoos.) The original Doodle was a Labradoodle.</p>
+
+
+<div class="readmore">
+<a href="https://en.wikipedia.org/wiki/Goldendoodle/"> More about the breed </a>
+</div>
+</div>
+      </div>    
+
+  <div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3>PUG</h3>
+<img src="images/pug.jpg" alt="#"/>
+<p>The pug is a breed of dog with physically distinctive features of a wrinkly, short-muzzled face, and curled tail. The breed has a fine, glossy coat that comes in a variety of colours, most often fawn or black.</p>
+
+
+<div class="readmore">
+<a href="https://en.m.wikipedia.org/wiki/Pug">  More about the breed </a>
+</div>
+</div>
+      </div>    
+
+<div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3>ROTTWEILER</h3>
+<img src="images/rott.jpg" alt="#"/>
+<p>The Rottweiler is one of the oldest of herding breed that has a history possibly dating back to the Roman Empire,the Rottweiler may be a descendant of ancient Roman drover dogs; a mastiff-type dog that was a dependable.</p>
+
+
+<div class="readmore">
+<a href="https://en.wikipedia.org/wiki/Rottweiler">  More about the breed </a>
+</div>
+</div>
+      </div>    
+
+<div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3>GOLDEN RETRIEVER</h3>
+<img src="images/gol.jpg" alt="#"/>
+<p>Golden Retriever is a large-sized gun dog that retrieve shot waterfowl during hunting and shooting parties. They were named 'retriever' because of their ability to retrieve shot game undamaged. </p>
+
+
+<div class="readmore">
+<a href="https://en.wikipedia.org/wiki/Golden_Retriever">  More about the breed </a>
+</div>
+</div>
+      </div>    
+
+
+<div class="cell large-3 medium-7 small-10"> <div class="cards">
+<h3>SIBERIAN HUSKY</h3>
+<img src="images/husky.jpg" alt="#"/>
+<p>The Siberian Husky is a medium size working dog breed that originated in Northeast Asia. The breed belongs to the Spitz genetic family. With proper training, they make great sled dogs. </p>
+
+
+<div class="readmore">
+<a href="https://en.wikipedia.org/wiki/Siberian_Husky">  More about the breed </a>
+</div>
+</div>
+      </div>    
+
+
+      </div> 
+      </div>
+
+
+
+
+
+
+  </body>
+</html>
